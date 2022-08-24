@@ -1,0 +1,134 @@
+@import 'styles/media.scss';
+
+.main {
+  padding: 35px 0;
+  background-color: var(--secondary-bg);
+
+  @include _mobile {
+    padding-bottom: 70px;
+  }
+}
+
+.container {
+  composes: container from global;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include _tablet {
+    flex-direction: column;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 16px;
+  font-size: var(--title-size);
+  line-height: var(--title-line-height);
+  color: var(--accent-primary);
+  text-align: center;
+
+  @include _tablet {
+    max-width: 260px;
+    margin: 0 auto;
+    margin-bottom: 37px;
+  }
+
+  &__img {
+    margin-bottom: 16px;
+  }
+
+  &::after {
+    content: '';
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-secondary);
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.info {
+  max-width: 360px;
+  font-size: var(--main-size);
+  line-height: var(--main-line-height);
+  color: var(--secondary-text-color);
+  letter-spacing: -0.02em;
+  p {
+    margin-top: 0;
+    margin-bottom: 30px;
+    a {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    strong {
+      color: var(--accent-bright);
+    }
+  }
+
+  @include _tablet {
+    margin-bottom: 60px;
+  }
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 600;
+  font-size: var(--main-size);
+  line-height: var(--main-line-height);
+  text-decoration: underline;
+  color: var(--accent-primary);
+
+  svg {
+    width: 39px;
+    height: 39px;
+    margin-right: 14px;
+  }
+}
+
+.form {
+  max-width: 400px;
+  width: 100%;
+
+  &__input {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 16px;
+    span {
+      font-weight: 500;
+      margin-bottom: 5px;
+      font-size: var(--small-size);
+      line-height: var(--small-line-height);
+      color: var(--accent-bright);
+    }
+
+    input {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      width: 100%;
+      outline: none;
+      font-weight: 400;
+      font-size: var(--main-size);
+      line-height: var(--main-line-height);
+    }
+  }
+
+  &__button {
+    composes: btn-primary from global;
+    margin-left: auto;
+  }
+}

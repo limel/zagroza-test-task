@@ -1,0 +1,143 @@
+@import 'styles/media.scss';
+$inner-indent: 16px;
+
+.main {
+  background-color: var(--hero-bg);
+  padding: 60px 0;
+  color: var(--hero-text-color);
+  position: relative;
+  margin-bottom: 125px;
+
+  @include _mobile {
+    padding-bottom: 360px;
+    margin-bottom: 170px;
+  }
+}
+.container {
+  composes: container from global;
+}
+.text {
+  max-width: 580px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @include _tablet {
+    max-width: 540px;
+  }
+}
+
+.title {
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 88px;
+  margin: 0;
+  margin-bottom: var(--inner-indent);
+
+  @include _mobile {
+    font-size: 48px;
+    line-height: 1.37;
+  }
+}
+
+.subtitle {
+  max-width: 450px;
+  margin: 0;
+  margin-bottom: ($inner-indent * 2);
+  font-weight: 400;
+  font-size: var(--medium-size);
+  line-height: var(--medium-line-height);
+  letter-spacing: -0.02em;
+  strong {
+    color: var(--accent-secondary);
+  }
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--inner-indent);
+  &__button {
+    composes: btn-primary from global;
+    &_transparent {
+      composes: btn-secondary from global;
+    }
+  }
+
+  @include _mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.gradient__rect {
+  position: absolute;
+  width: 150px;
+  height: 215px;
+  right: 380px;
+  bottom: 70px;
+  background: linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174aff 100%);
+  filter: blur(200px);
+
+  @include _tablet {
+    right: 60px;
+  }
+}
+.gradient__circle {
+  width: 317px;
+  height: 317px;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  right: 260px;
+  background: linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #ff29c3 100%);
+  filter: blur(200px);
+
+  @include _mobile {
+    top: auto;
+    bottom: 0;
+  }
+
+  @include _tablet {
+    right: 0;
+  }
+}
+
+.decoration__img {
+  position: absolute;
+  top: 0;
+  right: 100px;
+  width: 600px;
+  height: 560px;
+  object-fit: cover;
+
+  @include _laptop {
+    object-fit: contain;
+    width: 560px;
+    right: 0;
+  }
+
+  @include _tablet {
+    object-fit: contain;
+    width: 360px;
+  }
+  @include _mobile {
+    width: 360px;
+    height: auto;
+    object-fit: contain;
+    right: 50%;
+    transform: translateX(50%);
+    top: auto;
+    bottom: -60px;
+  }
+  // @include _tablet {
+  //   width: 400px;
+  //   height: 100%;
+  //   // right: l;
+  //   right: 0;
+  //   // top: auto;
+  // }
+}

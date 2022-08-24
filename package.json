@@ -7,15 +7,20 @@
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "react": "^18.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0",
+    "react-responsive": "^9.0.0-beta.10",
     "react-scripts": "5.0.1",
+    "sass": "^1.54.5",
+    "swiper": "^8.3.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "netlify deploy -p"
   },
   "eslintConfig": {
     "extends": [

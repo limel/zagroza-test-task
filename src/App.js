@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from 'react';
+import Header from 'components/Header';
+import Hero from 'components/Hero';
+
+const Advantages = lazy(() =>
+  import('./components/Advantages' /* webpackChunkName: "Advantages" */),
+);
+const CTA = lazy(() =>
+  import('./components/CTA' /* webpackChunkName: "CTA" */),
+);
+const CallbackForm = lazy(() =>
+  import('./components/CallbackForm' /* webpackChunkName: "CallbackForm" */),
+);
+const Footer = lazy(() =>
+  import('./components/Footer' /* webpackChunkName: "Footer" */),
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={'loading'}>
+      <Header />
+      <Hero />
+      <Advantages />
+      <CTA />
+      <CallbackForm />
+      <Footer />
+    </Suspense>
   );
 }
 

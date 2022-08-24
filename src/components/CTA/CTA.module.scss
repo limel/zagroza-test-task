@@ -1,0 +1,119 @@
+@import 'styles/media.scss';
+
+$inner-indent: 16px;
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 190px;
+
+  @include _tablet {
+    flex-direction: column;
+    margin-bottom: 90px;
+  }
+
+  @include _mobile {
+    flex-direction: column;
+    margin-bottom: 90px;
+  }
+}
+
+.container {
+  composes: container from global;
+
+  @include _tablet {
+    margin-bottom: 50px;
+  }
+}
+
+.text {
+  max-width: 442px;
+  font-size: var(--main-size);
+  line-height: var(--main-line-height);
+  letter-spacing: -0.02em;
+}
+
+.hashtag {
+  display: block;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin-bottom: var(--inner-indent);
+}
+
+.title {
+  font-weight: 700;
+  font-size: var(--big-size);
+  line-height: var(--big-line-height);
+  max-width: 300px;
+  color: var(--accent-primary);
+  margin: 0;
+  margin-bottom: var(--inner-indent);
+}
+
+.button {
+  composes: btn-primary from global;
+}
+
+.desc {
+  margin: 0;
+  margin-bottom: ($inner-indent * 2);
+  color: var(--secondary-text-color);
+  strong {
+    color: var(--accent-bright);
+  }
+}
+
+.gradient__rect {
+  position: absolute;
+  width: 150px;
+  height: 215px;
+  right: 335px;
+  top: 60px;
+  background: linear-gradient(180deg, rgba(24, 75, 255, 0) 0%, #174aff 100%);
+  filter: blur(200px);
+
+  @include _tablet {
+    display: none;
+  }
+  @include _mobile {
+    top: auto;
+    bottom: 20px;
+  }
+}
+.gradient__circle {
+  width: 317px;
+  height: 317px;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  right: 256px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 194, 255, 1) 15%,
+    rgba(255, 41, 195, 1) 65%
+  );
+  filter: blur(200px);
+
+  @include _tablet {
+    display: none;
+  }
+  @include _mobile {
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.decoration__img {
+  position: absolute;
+  top: -65px;
+  right: 0;
+  @include _tablet {
+    display: none;
+  }
+  @include _mobile {
+    position: static;
+    display: block;
+  }
+}
